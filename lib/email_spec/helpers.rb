@@ -21,6 +21,11 @@ module EmailSpec
       visit request_uri(link)
     end
 
+    def click_second_link_in_email(email = current_email)
+      link = links_in_email(email).second
+      visit request_uri(link)
+    end
+
     def open_email(address, opts={})
       set_current_email(find_email!(address, opts))
     end
